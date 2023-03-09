@@ -1,15 +1,15 @@
-frbinom_pmf<-function(n, p0, h0, c0) {
+dfrbinom<-function(n, p0, h0, c0) {
   if (1<p0 || p0<0) {
-    stop("Invalid range for p0 parameter")
+    stop("Invalid value for p0 parameter.")
   }
 
   if (1<h0 || h0<0) {
-    stop("Invalid range for h0 parameter")
+    stop("Invalid value for h0 parameter.")
   }
 
-  if (min(.5*(-2*p0+2^(2*h0-2)+(4*p0-p0*2^(2*h0)+2^(4*h0-4))^(1/2)),1-p0) > 1
-      || min(.5*(-2*p0+2^(2*h0-2)+(4*p0-p0*2^(2*h0)+2^(4*h0-4))^(1/2)),1-p0) < 0) {
-    stop("Parameters p0 and h0 do not meet formula condition")
+  if (min(.5*(-2*p0+2^(2*h0-2)+(4*p0-p0*2^(2*h0)+2^(4*h0-4))^(1/2)),1-p0) > c0
+      || c0 < 0) {
+    stop("Inavlid value for c0 parameter.")
   }
 
   max2<-n-1
