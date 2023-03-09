@@ -7,7 +7,7 @@ dfrbinom<-function(n, p0, h0, c0) {
     stop("Invalid value for h0 parameter.")
   }
 
-  if (min(.5*(-2*p0+2^(2*h0-2)+(4*p0-p0*2^(2*h0)+2^(4*h0-4))^(1/2)),1-p0) > c0
+  if (min(.5*(-2*p0+2^(2*h0-2)+(4*p0-p0*2^(2*h0)+2^(4*h0-4))^(1/2)),1-p0) < c0
       || c0 < 0) {
     stop("Inavlid value for c0 parameter.")
   }
